@@ -25,6 +25,7 @@ const Contact = () => {
       method="POST"
       target="_blank"
     >
+      <h1>Contact Us</h1>
       <div>
         <input type="text" placeholder="Your name" name="name" required />
       </div>
