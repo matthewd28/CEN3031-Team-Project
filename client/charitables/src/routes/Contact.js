@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Contact.css";
 
 const FORM_ENDPOINT =
   "https://public.herotofu.com/v1/83857590-70fa-11ed-a377-655c67143cec";
@@ -20,6 +21,7 @@ const Contact = () => {
   }
 
   return (
+    <div className = "contact">
     <form
       action={FORM_ENDPOINT}
       onSubmit={handleSubmit}
@@ -27,19 +29,12 @@ const Contact = () => {
       target="_blank"
     >
       <h1>Contact Us</h1>
-      <div>
-        <input type="text" placeholder="Your name" name="name" required />
+      <input name="name" type="text" class="feedback-input" placeholder="Name" required />   
+      <input name="email" type="text" class="feedback-input" placeholder="Email" required/>
+      <textarea name="text" class="feedback-input" placeholder="Message"required />
+      <input type="submit" value="SUBMIT"/>
+      </form>
       </div>
-      <div>
-        <input type="email" placeholder="Email" name="email" required />
-      </div>
-      <div>
-        <textarea placeholder="Your message" name="message" required />
-      </div>
-      <div>
-        <button type="submit"> Send a message </button>
-      </div>
-    </form>
   );
 };
 
