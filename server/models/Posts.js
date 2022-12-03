@@ -4,15 +4,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    postText: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    yourName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     amount: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    userName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    postText: {
       type: DataTypes.STRING,
       allowNull: false,
     },

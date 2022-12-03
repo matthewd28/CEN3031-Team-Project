@@ -23,7 +23,9 @@ function Contributions() {
   }, []);
   return (
     <div className="contributions">
-      <Link to="/createpost"> Create a Post!</Link>
+      <div className="postButton">
+        <Link to="/createpost"> Create a Post!</Link>
+      </div>
       <Routes>
         <Route path="/createpost" exact component={CreatePost} />
       </Routes>
@@ -32,8 +34,8 @@ function Contributions() {
         return (
           <div className="post">
             <div className="orgName"> {value.orgName} </div>
-            <div className="yourName"> {value.yourName} </div>
             <div className="amount"> {value.amount} </div>
+            <div className="userName"> {value.userName} </div>
             <div className="postText"> {value.postText} </div>
           </div>
         );

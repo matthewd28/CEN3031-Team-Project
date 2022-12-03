@@ -12,6 +12,23 @@
     padding: 0;
   }
   
+  .postButton {
+    
+
+    text-decoration: none;
+    background-color: #09bef0;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    border: 1px solid lightgray;
+    place-content: center;
+    display: grid;
+
+  }
+
+
   .post {
     width: 400px;
     height: 300px;
@@ -40,7 +57,7 @@
     color: white;
   }
 
-  .post .yourName {
+  .post .userName {
     flex: 5%;
     background-color: #08a71d;
     display: grid;

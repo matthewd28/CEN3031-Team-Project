@@ -3,18 +3,21 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./CreatePost.css";
 import * as Yup from "yup";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
+  let navigate = useNavigate();
+
   const initialValues_ = {
     orgName: "",
-    yourName: "",
     amount: "",
+    userName: "",
     postText: "",
   };
 
   const validationSchema_ = Yup.object().shape({
     orgName: Yup.string().required("You must input a title"),
-    yourName: Yup.string().required("You must enter your name"),
+    userName: Yup.string().required("You must enter your username"),
     amount: Yup.string().required(),
     postText: Yup.string()
       .min(5)
@@ -24,6 +27,7 @@ function CreatePost() {
   const onSubmit_ = (data) => {
     axios.post("http://localhost:3001/posts", data).then((response) => {
       console.log("Success!");
+      navigate("/contributions");
     });
   };
 
@@ -43,12 +47,12 @@ function CreatePost() {
             placeholder="Ex. V Foundation"
           />
 
-          <label>Your Name: </label>
-          <ErrorMessage name="Your name" component="span" />
+          <label>Username: </label>
+          <ErrorMessage name="userName" component="span" />
           <Field
             id="inputCreatePost"
-            name="yourName"
-            placeholder="Ex. John Doe"
+            name="userName"
+            placeholder="Ex. JohnDoe123"
           />
 
           <label>Contribution: </label>

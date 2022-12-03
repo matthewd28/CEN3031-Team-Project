@@ -1,39 +1,60 @@
-import React, { useRef } from "react";
-import { Form, Button, Card } from "react-bootstrap";
-//import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import "./SignUp.css";
+import axios from "axios";
 
-export default function SignUp() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
+function SignUp() {
+  const initialValues_ = {
+    username: "",
+    password: "",
+  };
+
+  const validationSchema_ = Yup.object().shape({
+    userName: Yup.string().required("You must enter a username"),
+    password: Yup.string()
+      .min(6)
+      .max(20)
+      .required("You must enter a password between 6-20 characters"),
+  });
+
+  const onSubmit_ = (data) => {
+    axios.post("http://localhost:3001/auth", data).then(() => {
+      console.log(data);
+    });
+  };
 
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
-          <Form>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control type="password" ref={passwordConfirmRef} required />
-            </Form.Group>
-            <Button className="w-100" type="submit">
-              Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? Log In
-      </div>
-    </>
+    <div className="registration">
+      <Formik
+        initialValues={initialValues_}
+        onSubmit={onSubmit_}
+        validationSchema={validationSchema_}
+      >
+        <Form className="formContainer">
+          <label>Username: </label>
+          <ErrorMessage name="userName" component="span" />
+          <Field
+            id="inputCreatePost"
+            name="userName"
+            placeholder="Ex. JohnDoe123"
+          />
+
+          <label>Password: </label>
+          <ErrorMessage name="password" component="span" />
+          <Field
+            autocomplete="off"
+            type="password"
+            id="inputCreatePost"
+            name="password"
+            placeholder="Enter password"
+          />
+
+          <button type="submit">Sign Up</button>
+        </Form>
+      </Formik>
+    </div>
   );
 }
+
+export default SignUp;

@@ -9,6 +9,9 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const post = req.body;
+  //const userName = req.user.userName;
+  //post.userName = userName;
+
   await Posts.create(post);
   res.json(post);
 });

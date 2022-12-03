@@ -5,11 +5,20 @@ import { FaHandsHelping } from "react-icons/fa";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  let navigate = useNavigate();
+  const logout = () => {
+    sessionStorage.removeItem("accessToken");
+    localStorage.removeItem("accessToken");
+    window.location.reload(false);
+    navigate("/");
+  };
 
   return (
     <>
@@ -35,50 +44,56 @@ function Navbar() {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/find"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                  Find Opportunities
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/contributions"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                  Contributions
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/volunteer"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                  Volunteer
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/donate"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                  Donate
-                </NavLink>
-              </li>
+
+              {localStorage.getItem("accessToken") && (
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/contributions"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={closeMobileMenu}
+                    >
+                      Contributions
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/find"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={closeMobileMenu}
+                    >
+                      Find Opportunities
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/volunteer"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={closeMobileMenu}
+                    >
+                      Volunteer
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/donate"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={closeMobileMenu}
+                    >
+                      Donate
+                    </NavLink>
+                  </li>
+                </>
+              )}
+
               <li className="nav-item">
                 <NavLink
                   to="/contact"
@@ -90,28 +105,37 @@ function Navbar() {
                   Contact Us
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/login"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                  Login
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/signup"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                  Sign Up
-                </NavLink>
-              </li>
+
+              {!localStorage.getItem("accessToken") ? (
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/login"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={closeMobileMenu}
+                    >
+                      Login
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/signup"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={closeMobileMenu}
+                    >
+                      Sign Up
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <button className="logout" onClick={logout}>
+                  Log Out
+                </button>
+              )}
             </ul>
           </div>
         </nav>
