@@ -24,13 +24,15 @@ router.post("/login", async (req, res) => {
   if (!user) res.json({ error: "User does not exist" });
   else {
     bcrypt.compare(password, user.password).then(async (match) => {
-      if (!match) res.json({ error: "Incorrect username and/or password" });
-
-      const accessToken = sign(
-        { userName: user.userName, id: user.id },
-        "charitablesAuth"
-      );
-      res.json(accessToken);
+      if (!match) {
+        res.json({ error: "Incorrect username and/or password" });
+      } else {
+        const accessToken = sign(
+          { userName: user.userName, id: user.id },
+          "charitablesAuth"
+        );
+        res.json(accessToken);
+      }
     });
   }
 });
