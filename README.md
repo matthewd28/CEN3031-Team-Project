@@ -2,9 +2,12 @@
 
 ### Overview
 
-If you are someone who is interested in data & analytics, as well as hoping to keep track of donations to charity, then look no further! Chari-tables is an app to do just that. It keeps track of donations, volunteer work, and more on a weekly or monthly basis to help you analyze your contributions over time. Additionally, users can find charity/volunteer events in their area to help boost their numbers!
-Chari-Tables is built using react and mysql express.
+Chari-Tables is a tool we created to incentivize community involvement, whether that be through volunteering or donating to charitable (pun) organizations! This tool provides analytics for user donations/volunteering across years, and includes a contributions page to check up on all of the good work your friends have been doing/posting to the website!
 
 ### Site
 
 https://chari-tables.netlify.app/
+
+### Use Instructions
+
+Navigate to the website linked above. From there, you can click "Sign Up." Follow the instructions given on the page and sign up. Then, click the login button to login with your new credentials. Once logged in, the contributions and donate pages will be visible, from where you can create/view posts from users and see your logged donations.
