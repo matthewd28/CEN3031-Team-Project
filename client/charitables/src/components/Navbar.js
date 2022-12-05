@@ -7,17 +7,20 @@ import { IconContext } from "react-icons/lib";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+//Navigation bar for navigating between pages
 function Navbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   let navigate = useNavigate();
+
+  //Removes access token from user's session when logging out
   const logout = () => {
     sessionStorage.removeItem("accessToken");
     localStorage.removeItem("accessToken");
-    window.location.reload(false);
     navigate("/");
+    window.location.reload(false);
   };
 
   return (
@@ -44,7 +47,6 @@ function Navbar() {
                   Home
                 </NavLink>
               </li>
-
               {localStorage.getItem("accessToken") && (
                 <>
                   <li className="nav-item">
@@ -93,7 +95,6 @@ function Navbar() {
                   </li>
                 </>
               )}
-
               <li className="nav-item">
                 <NavLink
                   to="/contact"
@@ -105,7 +106,6 @@ function Navbar() {
                   Contact Us
                 </NavLink>
               </li>
-
               {!localStorage.getItem("accessToken") ? (
                 <>
                   <li className="nav-item">

@@ -1,3 +1,4 @@
+//Constructing a database schema for user Posts
 module.exports = (sequelize, DataTypes) => {
   const Posts = sequelize.define("Posts", {
     orgName: {

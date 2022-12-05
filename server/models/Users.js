@@ -1,3 +1,4 @@
+//Constructing a database schema for user logins
 module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define("Users", {
     userName: {
@@ -9,12 +10,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-
-  // Users.associate = (models) => {
-  //   Users.hasMany(models.Posts, {
-  //     onDelete: "cascade",
-  //   });
-  // };
 
   return Users;
 };

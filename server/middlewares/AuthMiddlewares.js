@@ -1,5 +1,6 @@
 const { verify } = require("jsonwebtoken");
 
+//Verifies the existence of a user's authentication token
 const validateToken = (req, res, next) => {
   const accessToken = req.header("accessToken");
 
@@ -7,7 +8,6 @@ const validateToken = (req, res, next) => {
 
   try {
     const validToken = verify(accessToken, "charitablesAuth");
-    //const userName = validToken.userName;
     req.user = validToken;
 
     if (validToken) {

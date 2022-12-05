@@ -1,5 +1,6 @@
 import React from "react";
 
+//Welcome page for users
 function Home() {
   return (
     <div className="home">

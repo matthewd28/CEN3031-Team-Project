@@ -1,5 +1,6 @@
 import React from "react";
 
+//Will return a list of organizations in user's area to contribute to
 function Find() {
   return (
     <div className="find">

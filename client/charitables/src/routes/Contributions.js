@@ -16,12 +16,14 @@ import {
 function Contributions() {
   const [postList, setPostList] = useState([]);
 
+  //Retrieves user posts from database
   useEffect(() => {
     axios.get("http://localhost:3001/posts").then((response) => {
       setPostList(response.data);
     });
   }, []);
   return (
+    //Creating path for navigation bar and formatting user fields for posts
     <div className="contributions">
       <div className="postButton">
         <Link to="/createpost"> Create a Post!</Link>
@@ -29,7 +31,6 @@ function Contributions() {
       <Routes>
         <Route path="/createpost" exact component={CreatePost} />
       </Routes>
-
       {postList.map((value, key) => {
         return (
           <div className="post">

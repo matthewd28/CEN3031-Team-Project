@@ -1,5 +1,6 @@
 import React from "react";
 
+//Page that displays the user's logged volunteer hours
 function Volunteer() {
   return (
     <div className="volunteer">

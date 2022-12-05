@@ -8,11 +8,13 @@ import { useNavigate } from "react-router-dom";
 function SignUp() {
   let navigate = useNavigate();
 
+  //Values for username and password are initially blank
   const initialValues_ = {
     username: "",
     password: "",
   };
 
+  //Ensures username/password are formatted correctly
   const validationSchema_ = Yup.object().shape({
     userName: Yup.string().required("You must enter a username"),
     password: Yup.string()
@@ -21,6 +23,7 @@ function SignUp() {
       .required("You must enter a password between 6-20 characters"),
   });
 
+  //Posts username/password to database once requirements are met/user submits
   const onSubmit_ = (data) => {
     axios.post("http://localhost:3001/auth", data).then(() => {
       console.log(data);
@@ -28,6 +31,7 @@ function SignUp() {
     });
   };
 
+  //Formatting for registration
   return (
     <div className="registration">
       <Formik
