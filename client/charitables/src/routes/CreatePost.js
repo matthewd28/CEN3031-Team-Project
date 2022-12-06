@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 function CreatePost() {
   let navigate = useNavigate();
 
+  //Fields will initially be blank for post
   const initialValues_ = {
     orgName: "",
     amount: "",
@@ -15,6 +16,7 @@ function CreatePost() {
     postText: "",
   };
 
+  //Ensures that all fields are entered/formatted correctly
   const validationSchema_ = Yup.object().shape({
     orgName: Yup.string().required("You must input a title"),
     amount: Yup.string().required(),
@@ -23,6 +25,7 @@ function CreatePost() {
       .required("You must enter a post greater than 5 characters"),
   });
 
+  //Sends post request to database upon clicking submit
   const onSubmit_ = (data) => {
     data.userName = JSON.parse(localStorage.getItem('user'));
     axios.post("http://localhost:3001/posts", data).then((response) => {
@@ -31,6 +34,7 @@ function CreatePost() {
     });
   };
 
+  //Format for creating post
   return (
     <div className="createpost">
       <Formik

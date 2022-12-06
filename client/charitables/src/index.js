@@ -16,6 +16,7 @@ import Contributions from "./routes/Contributions";
 import Navbar from "./components/Navbar";
 import CreatePost from "./routes/CreatePost";
 
+//Imports navigation bar to be seen on entry point of app
 const Layout = () => {
   return (
     <>
@@ -25,6 +26,7 @@ const Layout = () => {
   );
 };
 
+//Defines the names of the paths for each web page
 const router = createBrowserRouter([
   {
     element: <Layout />,

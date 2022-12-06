@@ -13,6 +13,7 @@ function Contributions() {
     setPostModal(!postModal)
   }
 
+  //Retrieves user posts from database
   useEffect(() => {
     axios.get("http://localhost:3001/posts").then((response) => {
       setPostList(response.data);
@@ -20,6 +21,7 @@ function Contributions() {
   }, []);
 
   return (
+    //Creating path for navigation bar and formatting user fields for posts
     <div className="contributions">
       <button onClick={togglePostModal}
               className="postButton whiteLink"> 

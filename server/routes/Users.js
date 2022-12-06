@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 
 const { sign } = require("jsonwebtoken");
 
+//Uses bcrypt to encrypt the inputted password when registering
 router.post("/", async (req, res) => {
   const { userName, password } = req.body;
   bcrypt.hash(password, 10).then((hash) => {
@@ -16,6 +17,7 @@ router.post("/", async (req, res) => {
   });
 });
 
+//Checks for correct user credentials when logging in
 router.post("/login", async (req, res) => {
   const { userName, password } = req.body;
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 
+//Tool used for processing user's inputed message and relaying to developers
 const FORM_ENDPOINT =
   "https://public.herotofu.com/v1/83857590-70fa-11ed-a377-655c67143cec";
 
@@ -20,6 +21,7 @@ const Contact = () => {
     );
   }
 
+  //Formatting for contact fields
   return (
     <div className="contact">
       <form

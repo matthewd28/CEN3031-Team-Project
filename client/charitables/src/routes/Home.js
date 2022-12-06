@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css"
 
+//Welcome page for users
 function Home() {
   return (
     <div className="home">\

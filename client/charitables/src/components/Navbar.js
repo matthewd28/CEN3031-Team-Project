@@ -10,6 +10,7 @@ import Login from "../routes/Login"
 import SignUp from "../routes/SignUp"
 import Contact from "../routes/Contact"
 
+//Navigation bar for navigating between pages
 function Navbar() {
   const [click, setClick] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
@@ -41,6 +42,8 @@ function Navbar() {
   }
 
   let navigate = useNavigate();
+
+  //Removes access token from user's session when logging out
   const logout = () => {
     sessionStorage.removeItem("accessToken");
     localStorage.removeItem("accessToken");
