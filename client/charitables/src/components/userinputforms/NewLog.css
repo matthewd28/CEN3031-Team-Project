@@ -1,0 +1,27 @@
+.new-log {
+    /* background-color: rgb(31, 31, 31); */
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 60%;
+    max-width: 95%;
+    text-align: center;
+    /* box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25); */
+  }
+
+  .new-log-button {
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    /* border: 1px solid #0b5b18; */
+    background-color: #33b633;
+    border-radius: 5px;
+    color: white;
+    margin-right: 1rem;
+  }
+
+  .new-log-button:hover,
+  .new-log-button:active {
+    background-color: #09bef0;
+  }

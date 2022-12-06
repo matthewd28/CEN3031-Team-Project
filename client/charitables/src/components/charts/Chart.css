@@ -1,0 +1,12 @@
+.graph {
+    padding: 1rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 2px solid#ddd;
+    border-top: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    height: 14vh;
+    min-height: 150px;
+  }

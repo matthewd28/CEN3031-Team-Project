@@ -1,42 +1,4 @@
-.createpost {
-    width: 100vw;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .formContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 500px;
-    height: auto;
-    padding: 20px;
-    border: 5px solid #08a71d;
-  }
-  
-  .formContainer #inputCreatePost {
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid grey;
-    padding-left: 10px;
-    font-size: 20px;
-  }
-  
-  .formContainer button {
-    margin-top: 15px;
-    height: 40px;
-    border: none;
-    background-color: #08a71d;
-    color: white;
-  }
-  
-  .formContainer button:hover {
-    cursor: pointer;
-    background-color: #09bef0;
-  }
-  
-  span {
-    color: red;
-  }
+span {
+  color: red;
+  font-size: 0.9rem;
+}

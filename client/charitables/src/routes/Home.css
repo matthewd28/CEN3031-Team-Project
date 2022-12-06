@@ -1,0 +1,104 @@
+body {
+overflow-x: hidden;
+}
+
+.home {
+    background-color: #33b633;
+    height: 90vh;
+    z-index: 0;
+}
+
+.homeBanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+
+.headers {
+    width: 90vw;
+    text-align: center;
+    font-family: Montserrat;
+    letter-spacing: 0.08rem;
+    color: white;
+}
+
+.mainheader {
+    font-size: 3rem;
+    padding-bottom: 20px;
+}
+
+.subheader {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+ .backdrop {
+    background-color: white;
+    height: 70vh;
+    width: 200vw;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translate(-50vw);
+    position: absolute;
+    z-index: 1;
+} 
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.contentElement {
+    z-index: inherit;
+    width: 45vw;
+    min-width: 380px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.svgImage {
+    width: 100%;
+}
+
+.imageLabel {
+    font-family: Montserrat;
+    font-weight: 800;
+    font-size: 200%;
+    text-align: center;
+
+    color: #333;
+}
+
+.imageSubLabel {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 100%;
+    padding-top: 10px;
+    max-width: 375px;
+    text-align: center;
+
+    color: #333;
+}
+
+.hours {
+    position: absolute;
+    top: 60px;
+}
+
+.donateElement {
+    position: absolute;
+    top: calc(20vh + 50px);
+    right: 65vw;
+}
+
+.social {
+    position: absolute;
+    top: 20vh;
+    left: 65vw;
+}

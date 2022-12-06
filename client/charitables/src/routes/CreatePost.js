@@ -17,7 +17,6 @@ function CreatePost() {
 
   const validationSchema_ = Yup.object().shape({
     orgName: Yup.string().required("You must input a title"),
-    userName: Yup.string().required("You must enter your username"),
     amount: Yup.string().required(),
     postText: Yup.string()
       .min(5)
@@ -25,6 +24,7 @@ function CreatePost() {
   });
 
   const onSubmit_ = (data) => {
+    data.userName = JSON.parse(localStorage.getItem('user'));
     axios.post("http://localhost:3001/posts", data).then((response) => {
       console.log("Success!");
       navigate("/contributions");
@@ -38,39 +38,35 @@ function CreatePost() {
         onSubmit={onSubmit_}
         validationSchema={validationSchema_}
       >
-        <Form className="formContainer">
-          <label>Organization: </label>
-          <ErrorMessage name="orgName" component="span" />
-          <Field
-            id="inputCreatePost"
-            name="orgName"
-            placeholder="Ex. V Foundation"
-          />
-
-          <label>Username: </label>
-          <ErrorMessage name="userName" component="span" />
-          <Field
-            id="inputCreatePost"
-            name="userName"
-            placeholder="Ex. JohnDoe123"
-          />
-
-          <label>Contribution: </label>
-          <ErrorMessage name="amount" component="span" />
-          <Field
-            id="inputCreatePost"
-            name="amount"
-            placeholder="Ex. '$20', or '3 hours'"
-          />
-
-          <label>Post: </label>
-          <ErrorMessage name="postText" component="span" />
-          <Field
-            id="inputCreatePost"
-            name="postText"
-            placeholder="Share your thoughts..."
-          />
-          <button type="submit">Create Post</button>
+        <Form>
+          <div className="inputGroup">
+            <label>Organization: </label>
+            <ErrorMessage name="orgName" component="span" />
+            <Field
+              id="inputCreatePost"
+              name="orgName"
+              placeholder="Ex. V Foundation"
+            />
+          </div>
+          <div className="inputGroup">
+            <label>Contribution: </label>
+            <ErrorMessage name="amount" component="span" />
+            <Field
+              id="inputCreatePost"
+              name="amount"
+              placeholder="Ex. '$20', or '3 hours'"
+            />
+          </div>
+          <div className="inputGroup">
+            <label>Post: </label>
+            <ErrorMessage name="postText" component="span" />
+            <Field
+              id="inputCreatePost"
+              name="postText"
+              placeholder="Share your thoughts..."
+            />
+          </div>
+          <button className="loginButton" type="submit">Create Post</button>
         </Form>
       </Formik>
     </div>

@@ -1,18 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import {
-  BrowserRouter as Router,
-  Switch,
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
   Outlet,
 } from "react-router-dom";
 import Home from "./routes/Home";
 import Find from "./routes/Find";
-import Volunteer from "./routes/Volunteer";
-import Donate from "./routes/Donate";
+import Hours from "./routes/Hours";
+import Donations from "./routes/Donations";
 import Contact from "./routes/Contact";
 import Login from "./routes/Login";
 import SignUp from "./routes/SignUp";
@@ -42,12 +38,12 @@ const router = createBrowserRouter([
         element: <Find />,
       },
       {
-        path: "volunteer",
-        element: <Volunteer />,
+        path: "hours",
+        element: <Hours />,
       },
       {
-        path: "donate",
-        element: <Donate />,
+        path: "donations",
+        element: <Donations />,
       },
       {
         path: "contact",

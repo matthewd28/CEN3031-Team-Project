@@ -1,0 +1,41 @@
+.log-filter {
+    color: white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #33b633;
+    height: 50px;
+    padding: 0 2.2rem;
+  }
+  
+  .log-filter__control {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+  }
+  
+  .log-filter label {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  .selected {
+    color: #333;
+  }
+
+  .option {
+    font-family: Montserrat;
+  }
+
+  .log-filter select {
+    font-family: Montserrat;
+    padding: 0.4rem 3rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 2px solid#ddd;
+  }
