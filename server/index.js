@@ -12,6 +12,10 @@ const postRouter = require("./routes/Posts");
 app.use("/posts", postRouter);
 const usersRouter = require("./routes/Users");
 app.use("/auth", usersRouter);
+const donationsRouter = require("./routes/Donations");
+app.use("/donations", donationsRouter);
+const hoursRouter = require("./routes/Hours");
+app.use("/hours", hoursRouter);
 
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {

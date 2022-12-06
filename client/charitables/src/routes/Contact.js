@@ -30,30 +30,30 @@ const Contact = () => {
         method="POST"
         target="_blank"
       >
-        <h1>Contact Us</h1>
+        <h1 className="greenHeader">Contact Us</h1>
         <input
           name="name"
           type="text"
-          class="feedback-input"
+          className="feedback-input"
           placeholder="Name"
-          autocomplete="off"
+          autoComplete="off"
           required
         />
         <input
           name="email"
           type="text"
-          class="feedback-input"
+          className="feedback-input"
           placeholder="Email"
-          autocomplete="off"
+          autoComplete="off"
           required
         />
         <textarea
           name="text"
-          class="feedback-input"
+          className="feedback-input"
           placeholder="Message"
           required
         />
-        <input type="submit" value="SUBMIT" />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

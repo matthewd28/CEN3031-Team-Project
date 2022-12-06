@@ -1,0 +1,21 @@
+.log-date {
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    height: 5.5rem;
+    border-right: 1px solid#444;
+    /* background-color: #33b633; */
+    color: #444;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .log-month-and-day {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .log-year {
+    font-size: 1rem;
+  }
+  

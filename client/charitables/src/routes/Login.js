@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import "./SignUp.css";
+import "./Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -30,6 +30,7 @@ function Login() {
         alert(response.data.error);
       } else {
         localStorage.setItem("accessToken", response.data.token);
+        localStorage.setItem('user', JSON.stringify(data.userName));
         navigate("/");
         window.location.reload(false);
       }
@@ -38,35 +39,35 @@ function Login() {
 
   //Formatting for login
   return (
-    <div className="registration">
-      <Formik
-        initialValues={initialValues_}
-        onSubmit={onSubmit_}
-        validationSchema={validationSchema_}
-      >
-        <Form className="formContainer">
-          <label>Username: </label>
-          <ErrorMessage name="userName" component="span" />
-          <Field
-            id="inputCreatePost"
-            name="userName"
-            placeholder="Ex. JohnDoe123"
-          />
-
-          <label>Password: </label>
-          <ErrorMessage name="password" component="span" />
-          <Field
-            autocomplete="off"
-            type="password"
-            id="inputCreatePost"
-            name="password"
-            placeholder="Enter password"
-          />
-
-          <button type="submit">Login</button>
-        </Form>
-      </Formik>
-    </div>
+        <Formik
+          initialValues={initialValues_}
+          onSubmit={onSubmit_}
+          validationSchema={validationSchema_}
+        >
+          <Form >
+            <div className="inputGroup">
+              <label>Username</label>
+              <ErrorMessage name="userName" component="span" />
+              <Field
+                id="inputCreatePost"
+                name="userName"
+                placeholder="Ex. JohnDoe123"
+              />
+            </div>
+            <div className="inputGroup">
+              <label>Password</label>
+              <ErrorMessage name="password" component="span" />
+              <Field
+                autoComplete="off"
+                type="password"
+                id="inputCreatePost"
+                name="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <button className="loginButton" type="submit">Login</button>
+          </Form>
+        </Formik>
   );
 }
 

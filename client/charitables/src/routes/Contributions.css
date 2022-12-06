@@ -5,6 +5,9 @@
     align-items: center;
     padding-top: 40px;
     flex-direction: column;
+    
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   
   body {
@@ -13,60 +16,79 @@
   }
   
   .postButton {
-    
-
-    text-decoration: none;
-    background-color: #09bef0;
+    background-color: #33b633;
     width: 200px;
     height: 50px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    border: 1px solid lightgray;
-    place-content: center;
+    margin-top: 20px;
     display: grid;
-
+    place-content: center;
+    border-radius: 5px;
+    
   }
 
+  .postField {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+    width: 100%;
+    
+  }
+
+  .whiteLink {
+    font-size: 1rem;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+  }
 
   .post {
-    width: 400px;
+    font-family: Montserrat;
+    font-weight: 500;
+    width: 40%;
+    min-width: 350px;
+    max-width: 600px;
     height: 300px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
-    border: 1px solid lightgray;
+    margin: 20px 20px 20px 20px;
+    border: 2px solid lightgray;
   }
   
   
   .post .orgName {
-    flex: 20%;
+    flex: 10%;
     border-bottom: 1px solid lightgray;
-    background-color: #08a71d;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: #33b633;
     display: grid;
     place-content: center;
     color: white;
   }
 
   .post .amount {
-    flex: 5%;
-    background-color: #08a71d;
+    flex: 10%;
+    background-color: #33b633;
     display: grid;
     place-content: center;
     color: white;
   }
 
   .post .userName {
-    flex: 5%;
-    background-color: #08a71d;
+    flex: 10%;
+    /* background-color: #08a71d; */
     display: grid;
     place-content: center;
-    color: white;
+    font-weight: 600;
+    text-decoration: underline;
+    /* color: white; */
   }
   
   .post .postText {
-    flex: 60%;
+    flex: 55%;
     display: grid;
     place-content: center;
   }
