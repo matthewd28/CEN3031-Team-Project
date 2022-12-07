@@ -18,7 +18,7 @@
   }
   
   .log-filter label {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
   }
@@ -28,11 +28,11 @@
   }
 
   .option {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
   }
 
   .log-filter select {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     padding: 0.4rem 3rem;
     font-weight: bold;
     font-size: 1rem;
