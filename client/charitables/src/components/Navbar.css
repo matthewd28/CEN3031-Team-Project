@@ -23,7 +23,7 @@
   }
 
   .closeModal {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
     color: #bbb;
@@ -46,7 +46,7 @@
     background: #33b633;
     height: 60px;
     font-size: 1.1rem;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     position: sticky;
     top: 0;
     z-index: 2;
@@ -69,7 +69,6 @@
   }
   
   .navbar-logo {
-    /* color:#08a71d; */
     color: #fff;
     justify-self: start;
     cursor: pointer;
@@ -97,7 +96,6 @@
     justify-content: center;
     list-style: none;
     text-align: center;
-    justify-content: flex-end;
   }
   
   .nav-item {

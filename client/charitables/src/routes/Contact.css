@@ -8,7 +8,7 @@ form { max-width:420px; margin: auto; }
 
 .feedback-input {
   color:black;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight:500;
   font-size: 18px;
   border-radius: 5px;
@@ -30,11 +30,11 @@ textarea {
   max-height: 200px;
   line-height: 150%;
   resize:vertical;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
 }
 
 .greenHeader {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   padding-bottom: 20px;
   text-align: center;

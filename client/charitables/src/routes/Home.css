@@ -18,7 +18,7 @@ overflow-x: hidden;
 .headers {
     width: 90vw;
     text-align: center;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     letter-spacing: 0.08rem;
     color: white;
 }
@@ -67,7 +67,7 @@ overflow-x: hidden;
 }
 
 .imageLabel {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-weight: 800;
     font-size: 200%;
     text-align: center;
@@ -76,7 +76,7 @@ overflow-x: hidden;
 }
 
 .imageSubLabel {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 100%;
     padding-top: 10px;

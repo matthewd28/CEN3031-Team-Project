@@ -1,6 +1,5 @@
 .logs {
     border-radius: 10px;
-    /* border: 1px solid#999; */
     margin: 2rem auto;
     width: 80%;
     height: 70vh;
@@ -20,7 +19,7 @@
   }
 
   .nologs {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
     padding-top: 20vh;

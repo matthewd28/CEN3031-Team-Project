@@ -1,5 +1,5 @@
 .loginContainer {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
 
@@ -29,7 +29,7 @@
 }
 
 .loginContainer #inputCreatePost {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   height: 50px;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -40,7 +40,7 @@
 }
 
 .loginButton {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   min-height: 50px;
   border: none;
   background-color: #33b633;

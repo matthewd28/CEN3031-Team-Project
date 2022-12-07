@@ -9,7 +9,7 @@
   }
 
   .new-log-button {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
